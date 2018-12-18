@@ -121,7 +121,7 @@ export function param(json) {
     })
   ).join('&')
 }
-//转路由参数成对象返回
+
 export function param2Obj(url) {
   const search = url.split('?')[1]
   if (!search) {
