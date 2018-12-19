@@ -7,15 +7,15 @@
     <div class="right-menu">
       <template v-if="device!=='mobile'">
         <error-log class="errLog-container right-menu-item"/>
-
+        <!-- 全屏 -->
         <el-tooltip :content="$t('navbar.screenfull')" effect="dark" placement="bottom">
           <screenfull class="screenfull right-menu-item"/>
         </el-tooltip>
-
+        <!-- 字体大小 -->
         <el-tooltip :content="$t('navbar.size')" effect="dark" placement="bottom">
           <size-select class="international right-menu-item"/>
         </el-tooltip>
-
+        <!-- 语言 -->
         <lang-select class="international right-menu-item"/>
 
         <el-tooltip :content="$t('navbar.theme')" effect="dark" placement="bottom">
