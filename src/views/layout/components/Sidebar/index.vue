@@ -1,5 +1,6 @@
 <template>
-  <el-scrollbar wrap-class="scrollbar-wrapper">
+  <el-scrollbar wrap-class="scrollbar-wrapper" style="box-shadow: rgb(0, 0, 0) 0px 0px 7px 0px;">
+    <div class="logo">111</div>
     <el-menu
       :show-timeout="200"
       :default-active="$route.path"
@@ -20,19 +21,26 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import SidebarItem from "./SidebarItem";
+import { mapGetters } from 'vuex'
+import SidebarItem from './SidebarItem'
 
 export default {
   components: { SidebarItem },
   computed: {
-    ...mapGetters(["permission_routers", "sidebar"]),
+    ...mapGetters(['permission_routers', 'sidebar']),
     isCollapse() {
-      return !this.sidebar.opened;
+      return !this.sidebar.opened
     }
   },
   mounted: function() {
-    console.log(this.$store.getters);
+    console.log(this.$store.getters)
+    console.log(this.permission_routers)
   }
-};
+}
 </script>
+<style scoped>
+.logo{
+  width:100%;
+  height:80px;
+}
+</style>

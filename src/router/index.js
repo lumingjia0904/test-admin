@@ -106,6 +106,21 @@ export const constantRouterMap = [
         noCache: true
       }
     }]
+  },
+  {
+    path: '/test',
+    component: Layout,
+    redirect: '/test/index',
+    children: [{
+      path: 'index',
+      component: () => import('@/views/test/index'),
+      name: 'test',
+      meta: {
+        title: 'test',
+        icon: 'guide',
+        noCache: true
+      }
+    }]
   }
 ]
 
@@ -129,23 +144,23 @@ export const asyncRouterMap = [
       roles: ['admin', 'editor'] // you can set roles in root nav
     },
     children: [{
-        path: 'page',
-        component: () => import('@/views/permission/page'),
-        name: 'PagePermission',
-        meta: {
-          title: 'pagePermission',
-          roles: ['admin'] // or you can only set roles in sub nav
-        }
-      },
-      {
-        path: 'directive',
-        component: () => import('@/views/permission/directive'),
-        name: 'DirectivePermission',
-        meta: {
-          title: 'directivePermission'
-          // if do not set roles, means: this page does not require permission
-        }
+      path: 'page',
+      component: () => import('@/views/permission/page'),
+      name: 'PagePermission',
+      meta: {
+        title: 'pagePermission',
+        roles: ['admin'] // or you can only set roles in sub nav
       }
+    },
+    {
+      path: 'directive',
+      component: () => import('@/views/permission/directive'),
+      name: 'DirectivePermission',
+      meta: {
+        title: 'directivePermission'
+        // if do not set roles, means: this page does not require permission
+      }
+    }
     ]
   },
 
@@ -180,33 +195,33 @@ export const asyncRouterMap = [
       icon: 'example'
     },
     children: [{
-        path: 'create',
-        component: () => import('@/views/example/create'),
-        name: 'CreateArticle',
-        meta: {
-          title: 'createArticle',
-          icon: 'edit'
-        }
-      },
-      {
-        path: 'edit/:id(\\d+)',
-        component: () => import('@/views/example/edit'),
-        name: 'EditArticle',
-        meta: {
-          title: 'editArticle',
-          noCache: true
-        },
-        hidden: true
-      },
-      {
-        path: 'list',
-        component: () => import('@/views/example/list'),
-        name: 'ArticleList',
-        meta: {
-          title: 'articleList',
-          icon: 'list'
-        }
+      path: 'create',
+      component: () => import('@/views/example/create'),
+      name: 'CreateArticle',
+      meta: {
+        title: 'createArticle',
+        icon: 'edit'
       }
+    },
+    {
+      path: 'edit/:id(\\d+)',
+      component: () => import('@/views/example/edit'),
+      name: 'EditArticle',
+      meta: {
+        title: 'editArticle',
+        noCache: true
+      },
+      hidden: true
+    },
+    {
+      path: 'list',
+      component: () => import('@/views/example/list'),
+      name: 'ArticleList',
+      meta: {
+        title: 'articleList',
+        icon: 'list'
+      }
+    }
     ]
   },
 
@@ -234,23 +249,23 @@ export const asyncRouterMap = [
       icon: '404'
     },
     children: [{
-        path: '401',
-        component: () => import('@/views/errorPage/401'),
-        name: 'Page401',
-        meta: {
-          title: 'page401',
-          noCache: true
-        }
-      },
-      {
-        path: '404',
-        component: () => import('@/views/errorPage/404'),
-        name: 'Page404',
-        meta: {
-          title: 'page404',
-          noCache: true
-        }
+      path: '401',
+      component: () => import('@/views/errorPage/401'),
+      name: 'Page401',
+      meta: {
+        title: 'page401',
+        noCache: true
       }
+    },
+    {
+      path: '404',
+      component: () => import('@/views/errorPage/404'),
+      name: 'Page404',
+      meta: {
+        title: 'page404',
+        noCache: true
+      }
+    }
     ]
   },
 
@@ -279,29 +294,29 @@ export const asyncRouterMap = [
       icon: 'excel'
     },
     children: [{
-        path: 'export-excel',
-        component: () => import('@/views/excel/exportExcel'),
-        name: 'ExportExcel',
-        meta: {
-          title: 'exportExcel'
-        }
-      },
-      {
-        path: 'export-selected-excel',
-        component: () => import('@/views/excel/selectExcel'),
-        name: 'SelectExcel',
-        meta: {
-          title: 'selectExcel'
-        }
-      },
-      {
-        path: 'upload-excel',
-        component: () => import('@/views/excel/uploadExcel'),
-        name: 'UploadExcel',
-        meta: {
-          title: 'uploadExcel'
-        }
+      path: 'export-excel',
+      component: () => import('@/views/excel/exportExcel'),
+      name: 'ExportExcel',
+      meta: {
+        title: 'exportExcel'
       }
+    },
+    {
+      path: 'export-selected-excel',
+      component: () => import('@/views/excel/selectExcel'),
+      name: 'SelectExcel',
+      meta: {
+        title: 'selectExcel'
+      }
+    },
+    {
+      path: 'upload-excel',
+      component: () => import('@/views/excel/uploadExcel'),
+      name: 'UploadExcel',
+      meta: {
+        title: 'uploadExcel'
+      }
+    }
     ]
   },
 
